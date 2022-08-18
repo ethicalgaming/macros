@@ -41,7 +41,7 @@ The region code should look something like this:
 
 To actually image search, an image of the item inside the search region is required. The item should be as small as possible, 10x10px is preferred as a size. This image should also include as little as possible of the background. This is to prevent contrast changing in colours affecting the image search, and also the region being 100% correct.
 
-This image is then stored in `components/images`.
+This image is then stored in `components/images`. To get these coordinates, use the provided `Coordinates.ahk` file under `components/utils`.
 
 ![screenshotregion](https://puu.sh/JgNIa.png)
 
