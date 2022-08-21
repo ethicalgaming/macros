@@ -38,3 +38,11 @@ F9::
       Equip("offhand", "offhand")
    }
 Return
+
+; Bladed Dive
+F20:: 
+   Equip("melee_mainhand", "bd_mainhand")
+   Equip("melee_offhand", "bd_offhand")
+   Cast("bladed_dive")
+   LeftClick()
+Return

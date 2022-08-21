@@ -27,13 +27,13 @@ Equipped(Item){
    Case "mainhand":
       path := Path("mainhand")
       item_type := "Mainhand"
-   Case "mainhand_leng":
+   Case "melee_mainhand":
       path := Path("mainhand_leng")
       item_type := "Mainhand" 
    Case "offhand":
       path := Path("offhand")
       item_type := "Offhand"
-   Case "offhand_leng":
+   Case "melee_offhand":
       path := Path("offhand_leng")
       item_type := "Offhand" 
    Case "vestment":
@@ -67,7 +67,8 @@ Style(){
 }
 }
 
-; Helper function to equip an item, has optional custom keybind option
+; Helper function to equip an item. Both input variables are optional, when image is null it doesn't do an image search.
+; If keybind is null it defaults to the image name as the variable name, i.e. when variable = image name.
 Equip(Image := False, Keybind := False) {
    keybind := Keybind ? %Keybind% : %Image%
    if (Image) {
@@ -83,4 +84,21 @@ Equip(Image := False, Keybind := False) {
       Send {%keybind% up}
       Sleep, % ran(1,2)
    }
+}
+
+; Helper function to send a keybind up and down, i.e. casting an ability or auto attack.
+Cast(Keybind) {
+   keybind := %Keybind%
+   Send {%keybind% down}
+   Sleep, % ran(1,2) 
+   Send {%keybind% up}
+   Sleep, % ran(1,2)
+}
+
+; Helper function to perform a left click.
+LeftClick() {
+   Send {Click down}
+   Sleep, % ran(1,2) 
+   Send {Click up}
+   Sleep, % ran(1,2)
 }
