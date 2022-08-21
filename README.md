@@ -1,8 +1,12 @@
-# Image Searching, Component Based PvM Macros
+# Image Searching, Component Based Macro API
+
+This repository is an AutoHotkey **Application Programming Interface** for PvMing. It provides a variety of tools that can be used to improve your PvM experience.
 
 Before getting started, I highly suggest you install Visual Studio Code, and after installing, install the [AutoHotkey Plus Plus](https://marketplace.visualstudio.com/items?itemName=mark-wiemer.vscode-autohotkey-plus-plus) extension.
 
 ![vscode](https://puu.sh/JgNGB.png)
+
+All these macros require an input key that you press. As most macros that you can make with this API are 1:x, not 1:1, write your macros at your own risk. This is open source software and has no affiliation with Jagex Ltd, RuneScape or any other entities.
 
 ## Advantages
 
@@ -56,14 +60,24 @@ A check should be added to the `components/utils/ImageSearch.ahk` Switch case, i
 
 That's it. Now you should be able to call `Equipped('tectonic_helm')` in your code to check if the item is equipped, or `Unequipped('tectonic_helm')` for the opposite, before you equip your items.
 
+## Helper Functions
+
+- `Equipped(Item)` - Takes a string `Item` that represents a specific item, such as `mainhand_melee` that maps to a saved image.
+- `Unequipped(Item)` - The inverse of `Equipped`. Purely there to clean up code.
+- `Equip(Image, Keybind)` - Equips an item given an `Image` and corresponding `Keybind`. The `Keybind` maps to the variable of choice. If it is null, then the default variable used is the same as the name of `Image`. If `Image` is null, no image search is performed.
+- `Cast(Keybind)` - Sends a keybind with delay, allowing no image search on things like abilities, auto attacks, etc.
+- `LeftClick()` - Sends a left click, can be used for Bladed Dive, Targeted Magma Tempest, etc.
+
+2 examples of possible macros, a simple Dual Wield and Bladed Dive are included under `components`.
+
 ## Additional Info and Advice
 
-I like to have a hotkey that I can use to pause my macros. The way I've written it means that it will only activate on the RuneScape window, however at times pausing is nice too. The default keybind for this is <kbd>F12</kbd>.
+I like to have a hotkey that I can use to pause my macros. The way I've written it means that it will only activate on the game window, however at times pausing is nice too. The default keybind for this is <kbd>F12</kbd>. This can also be abstracted into a component in itself, such as `Pause.ahk`.
 
-I've also added a Tray Icon, by default, this is just the RuneScape logo. You are welcome to change this to whatever you'd like. 
+I've also added a Tray Icon, by default, this is just a gear. You are welcome to change this to whatever you'd like. 
 
 A cool tip is to use your 'input' keybinds, i.e. whatever a macro is mapped to, as the <kbd>F9</kbd> key all the way up to <kbd>F24</kbd>. These are invisible F keys that can be assigned through mouse software and detectable by AHK.
 
-If you ever find that you're running out of input keys, RuneScape treats something like a backslash differently to the backslash on Numpad. This is possible for all the mathematical operators on numpad, 4 additional keys you can use. To call this in AHK, it is just `NumpadSub` for -, `NumpadMult` for *, etc.
+If you ever find that you're running out of input keys, the game treats something like a backslash differently to the backslash on Numpad. This is possible for all the mathematical operators on numpad, 4 additional keys you can use. To call this in AHK, it is just `NumpadSub` for -, `NumpadMult` for *, etc.
 
 For further requests, please open an Issue on GitHub. Have fun.

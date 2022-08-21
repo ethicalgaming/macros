@@ -6,7 +6,7 @@
  *
 */
 
-Menu, Tray, Icon, %A_ScriptDir%\components\icons\rs.ico
+Menu, Tray, Icon, %A_ScriptDir%\components\icons\icon.ico
 #Include, components\utils\ImageSearch.ahk
 #Include, components\utils\Variables.ahk
 
