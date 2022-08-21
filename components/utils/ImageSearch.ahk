@@ -68,9 +68,16 @@ Style(){
 }
 
 ; Helper function to equip an item, has optional custom keybind option
-Equip(Image, Keybind := False) {
+Equip(Image := False, Keybind := False) {
    keybind := Keybind ? %Keybind% : %Image%
-   if (Unequipped(Image)){
+   if (Image) {
+      if (Unequipped(Image)){
+         Send {%keybind% down}
+         Sleep, % ran(1,2) 
+         Send {%keybind% up}
+         Sleep, % ran(1,2)
+      }
+   } else {
       Send {%keybind% down}
       Sleep, % ran(1,2) 
       Send {%keybind% up}
