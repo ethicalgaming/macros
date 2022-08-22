@@ -7,10 +7,10 @@
 */
 
 ; Items
-mainhand := "i"
-offhand := "o"
-bd_mainhand := "["
-bd_offhand := "]"
+mainhand := "1"
+offhand := "2"
+bd_mainhand := "3"
+bd_offhand := "4"
 
 ; Abilities
-bladed_dive := ";"
+bladed_dive := "5"
