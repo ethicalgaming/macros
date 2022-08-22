@@ -6,9 +6,9 @@
  *
 */
 
-Menu, Tray, Icon, %A_ScriptDir%\components\icons\icon.ico
-#Include, components\utils\ImageSearch.ahk
-#Include, components\utils\Variables.ahk
+Menu, Tray, Icon, %A_ScriptDir%\icons\gear.ico
+#Include, utils\ImageSearch.ahk
+#Include, utils\Variables.ahk
 
 #MaxThreadsPerHotkey 2
 #SingleInstance Force
@@ -33,12 +33,12 @@ Menu, Tray, Icon, %A_ScriptDir%\components\icons\icon.ico
    ; Conditional Wand Orb or Lengs depending on style equipped. Only equips if item is not already equipped.
    ; Will never spam chatbox.
    F9:: 
-      if (Style() = "melee"){ 
-         Equip("mainhand_leng", "mainhand")
-         Equip("offhand_leng", "offhand")
+      if (Style() = "melee"){
+         Equip("melee_mainhand", "mainhand")
+         Equip("melee_offhand", "offhand")
       } else {
-         Equip("mainhand", "mainhand")
-         Equip("offhand", "offhand")
+         Equip("mage_mainhand", "mainhand")
+         Equip("mage_offhand", "offhand")
       }
    Return
 

@@ -8,12 +8,12 @@
 
 ; Conditional Wand Orb or Lengs depending on style equipped. Only equips if item is not already equipped.
 ; Will never spam chatbox.
-F9:: 
-   if (Style() = "melee"){
-      Equip("melee_mainhand", "mainhand")
-      Equip("melee_offhand", "offhand")
+F12::
+   Suspend
+   If A_IsSuspended
+   {
+      TrayTip, %name%, Macros Deactivated, 20, 1
    } else {
-      Equip("mage_mainhand", "mainhand")
-      Equip("mage_offhand", "offhand")
+      TrayTip, %name%, Macros Activated, 20, 1
    }
 Return

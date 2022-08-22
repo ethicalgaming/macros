@@ -7,12 +7,7 @@
 */
 
 SetWorkingDir ..\%A_ScriptDir%
-#Include, components\utils\General.ahk
-
-; Filename helper for finding images.
-Path(Filename){
-   return Format("components\images\{}.png", Filename)
-}
+#Include, utils\General.ahk
 
 ; Coordinates object for storing coordinates of each item slot
 global Coordinates := Object()
@@ -20,17 +15,16 @@ Coordinates.Mainhand := Object("X1", 2395, "Y1", 913, "X2", 2433, "Y2", 951)
 Coordinates.Offhand := Object("X1", 2435, "Y1", 913, "X2", 2473, "Y2", 951)
 Coordinates.Helm := Object("X1", 2519, "Y1", 691, "X2", 2551, "Y2", 722)
 
-; Checks if an item is equipped in its corresponding slot.
 Equipped(Item){
    Switch Item
-   { 
-   Case "mainhand":
+   {
+   Case "mage_mainhand":
       path := Path("mainhand")
       item_type := "Mainhand"
    Case "melee_mainhand":
       path := Path("mainhand_leng")
       item_type := "Mainhand" 
-   Case "offhand":
+   Case "mage_offhand":
       path := Path("offhand")
       item_type := "Offhand"
    Case "melee_offhand":
@@ -38,14 +32,13 @@ Equipped(Item){
       item_type := "Offhand" 
    Case "vestment":
       path := Path("vestmenthelm")
-      item_type := "Helm"
+      item_type := "Helm" 
    Default:
       path := ""
-      item_type := ""
+      item_type := "Mainhand"
    }
    CoordMode, Pixel, Screen
    ImageSearch, , , Coordinates[item_type].X1, Coordinates[item_type].Y1, Coordinates[item_type].X2, Coordinates[item_type].Y2, *40, *TransBlack %path%
-   ; Logic is that the equipped items are searched, if the item exists in the corresponding slot, return True, else False
    if (ErrorLevel = 0){
    return True
 } else {
@@ -58,7 +51,8 @@ Unequipped(Item){
    return !Equipped(Item)
 }
 
-; Helper function to detect which style is equipped
+; Helper function to check what style is equipped.
+; Usage would be: if (Style() = "melee")
 Style(){
    if (Equipped("vestment")) {
    return "melee"

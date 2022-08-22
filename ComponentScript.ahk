@@ -6,9 +6,9 @@
  *
 */
 
-Menu, Tray, Icon, %A_ScriptDir%\components\icons\icon.ico
-#Include, components\utils\ImageSearch.ahk
-#Include, components\utils\Variables.ahk
+Menu, Tray, Icon, %A_ScriptDir%\icons\gear.ico
+#Include, utils\ImageSearch.ahk
+#Include, utils\Variables.ahk
 
 #MaxThreadsPerHotkey 2
 #SingleInstance Force
