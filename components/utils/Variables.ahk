@@ -9,6 +9,8 @@
 ; Items
 mainhand := "1"
 offhand := "2"
-
 bd_mainhand = "3"
 bd_offhand = "4"
+
+; Abilities
+bladed_dive := "5"

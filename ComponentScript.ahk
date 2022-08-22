@@ -10,19 +10,13 @@ Menu, Tray, Icon, %A_ScriptDir%\components\icons\icon.ico
 #Include, components\utils\ImageSearch.ahk
 #Include, components\utils\Variables.ahk
 
-F12::
-	Suspend
-	If A_IsSuspended
-	{
-		TrayTip, Macro Title, Deactivated, 20, 1
-	} else {
-		TrayTip, Macro Title, Activated, 20, 1
-	}
-Return
-
 #MaxThreadsPerHotkey 2
 #SingleInstance Force
 #IfWinActive RuneScape
+
+	global name := "Boss Macro"
+	; Pause Hotkey
+	#Include, components\Pause.ahk
 
 	; This is a component based way of creating a script. This allows you to have your dual wield or other macro
 	; in a specific file, and import it into any script you'd like. i.e. Vorago, Solak, etc.
