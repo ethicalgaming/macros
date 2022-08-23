@@ -1,3 +1,12 @@
+/**
+ * Copyright (c) GitHub/EthicalGaming.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ * Requires coordinates for summoning points (see README), keybinds for call/familiar special, and Right Windows key to start/pause by default.
+ *
+*/
+
 #include, utils\lib\Vis2.ahk
 #Include, utils\General.ahk
 
