@@ -15,6 +15,18 @@ Coordinates.Mainhand := Object("X1", 2395, "Y1", 913, "X2", 2433, "Y2", 951)
 Coordinates.Offhand := Object("X1", 2435, "Y1", 913, "X2", 2473, "Y2", 951)
 Coordinates.Helm := Object("X1", 2519, "Y1", 691, "X2", 2551, "Y2", 722)
 
+; Coordinates object for combat strength prayers, i.e. Affliction.
+global Prayers := Object()
+Prayers.Magic := Object("X1", 2370, "Y1", 539, "X2", 2385, "Y2", 553)
+Prayers.Ranged := Object("X1", 2334, "Y1", 539, "X2", 2349, "Y2", 553)
+Prayers.Melee := Object("X1", 2517, "Y1", 505, "X2", 2532, "Y2", 520)
+
+Prayer(Style){
+   Random, prayerX, Prayers[Style].X1, Prayers[Style].X2
+   Random, prayerY, Prayers[Style].Y1, Prayers[Style].Y2
+   ControlClick, x%prayerX% y%prayerY%, RuneScape
+}
+
 Equipped(Item){
    Switch Item
    {

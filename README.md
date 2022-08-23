@@ -16,6 +16,10 @@ All these macros require an input key that you press. As most macros that you ca
 
 - Component based PvM macroing allows a script such as DualWield.ahk to be re-used in any script. This means that if scripts are made depending on bossing, i.e. `Vorago.ahk`, `Solak.ahk`, etc, they can all inherit the same files, allowing for the main script to be a few lines long.
 
+- An implementation of OCR (Object Character Recognition), allowing reading of the screen similar to Alt1 Toolkit, allowing reading things like summoning points, familiar health, player health, adrenaline, etc.
+
+- A more logical way of writing a script, i.e. with helper functions you can `Cast`, `Prayer`, `Equip`, etc.
+
 ## Traditional Macroing
 
 Please see the `Script.ahk` file. This is an example of traditional image searching. Each script will lie inside this file instead of importing other files. 
@@ -72,6 +76,7 @@ That's it. Now you should be able to call `Equipped('tectonic_helm')` in your co
 - `Equip(Image, Keybind)` - Equips an item given an `Image` and corresponding `Keybind`. The `Keybind` maps to the variable of choice. If it is null, then the default variable used is the same as the name of `Image`. If `Image` is null, no image search is performed.
 - `Cast(Keybind)` - Sends a keybind with delay, allowing no image search on things like abilities, auto attacks, etc.
 - `LeftClick()` - Sends a left click, can be used for Bladed Dive, Targeted Magma Tempest, etc.
+- `Prayer(Style)` - Sends a simulated `ControlClick` to activate or deactivate a prayer. This allows saving of bar space.
 
 2 examples of possible macros, a simple Dual Wield and Bladed Dive are included under `components`.
 

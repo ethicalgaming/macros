@@ -49,3 +49,18 @@ Menu, Tray, Icon, %A_ScriptDir%\icons\gear.ico
       Cast("bladed_dive")
       LeftClick()
    Return
+
+   ; Mage
+   F1:: 
+      Prayer("Magic")
+   Return
+
+   ; Ranged
+   F2:: 
+      Prayer("Ranged")
+   Return
+
+   ; Melee
+   F3:: 
+      Prayer("Melee")
+   Return

@@ -17,7 +17,6 @@ Menu, Tray, Icon, %A_ScriptDir%\icons\gear.ico
 	global name := "Boss Macro"
 	; Pause Hotkey
 	#Include, components\Pause.ahk
-
 	; This is a component based way of creating a script. This allows you to have your dual wield or other macro
 	; in a specific file, and import it into any script you'd like. i.e. Vorago, Solak, etc.
 
@@ -25,3 +24,4 @@ Menu, Tray, Icon, %A_ScriptDir%\icons\gear.ico
 	; Will never spam chatbox.
 	#Include, components\DualWield.ahk
 	#Include, components\BladedDive.ahk
+	#Include, components\Prayers.ahk
