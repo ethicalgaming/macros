@@ -8,7 +8,7 @@ FamiliarCoordinates.SummoningPoints := Object("X1", 2036, "Y1", 1302, "X2", 2104
 
 global Familiars := Object()
 Familiars.RipperDemon := Object("Name", "RIPPER DEMON", "Cost", 20) 
-global cost := SpiritCape ? Familiars.RipperDemon.Cost : Familiars.RipperDemon.Cost * 0.8
+global cost := SpiritCape ? Familiars.RipperDemon.Cost * 0.8 : Familiars.RipperDemon.Cost
 
 call_familiar := "1"
 familiar_spec := "2"
