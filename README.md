@@ -75,6 +75,14 @@ That's it. Now you should be able to call `Equipped('tectonic_helm')` in your co
 
 2 examples of possible macros, a simple Dual Wield and Bladed Dive are included under `components`.
 
+## Familiar Speccer
+
+This uses [Vis2](https://github.com/iseahound/Vis2), an OCR (Object Character Recognition, Image -> Text) library to convert your amount of summoning points into an actual number for AHK to read. Everything from `lib` and `bin` are from `Vis2`. It will perform this check every 1-2 game ticks and if you have the required amount of summoning points for the special, it will execute the special attack. This means within 1-2 ticks of having enough summoning points, your familiar will spec. 
+
+To set this up, type your keybinds into the appropriate variables, and use the `Coordinates.ahk` helper application to get the region of your summoning points. It's best to be as accurate as possible. 
+
+![familiarregion](https://puu.sh/Jhz1p.png)
+
 ## Additional Info and Advice
 
 I like to have a hotkey that I can use to pause my macros. The way I've written it means that it will only activate on the game window, however at times pausing is nice too. The default keybind for this is <kbd>F12</kbd>. This can also be abstracted into a component in itself, such as `Pause.ahk`.

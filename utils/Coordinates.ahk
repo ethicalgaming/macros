@@ -55,7 +55,7 @@ Options: (White space separated)
         If ( MY > MYend )
             temp := MY, MY := MYend, MYend := temp
         arr := [MX, MY, MXend, MYend]
-        Return Format("""X1"": {}, ""Y1"": {}, ""X2"": {}, ""Y2"": {}", arr*)
+        Return Format("""X1"", {}, ""Y1"", {}, ""X2"", {}, ""Y2"", {}", arr*)
     }
     else ; Relative
     {
@@ -66,7 +66,7 @@ Options: (White space separated)
         If ( rMY > rMYend )
             temp := rMY, rMY := rMYend, rMYend := temp
         arr := [rMX, rMY, rMXend, rMYend]
-        Return Format("""X1"": {}, ""Y1"": {}, ""X2"": {}, ""Y2"": {}", arr*)
+        Return Format("""X1"", {}, ""Y1"", {}, ""X2"", {}, ""Y2"", {}", arr*)
     }
 }
 
