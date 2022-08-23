@@ -77,7 +77,7 @@ That's it. Now you should be able to call `Equipped('tectonic_helm')` in your co
 
 ## Familiar Speccer
 
-This uses [Vis2](https://github.com/iseahound/Vis2), an OCR (Object Character Recognition, Image -> Text) library to convert your amount of summoning points into an actual number for AHK to read. Everything from `lib` and `bin` are from `Vis2`. It will perform this check every 1-2 game ticks and if you have the required amount of summoning points for the special, it will execute the special attack. This means within 1-2 ticks of having enough summoning points, your familiar will spec. 
+This uses [Vis2](https://github.com/iseahound/Vis2), an OCR (Object Character Recognition, Image -> Text) library to convert your amount of summoning points into an actual number for AHK to read. Everything from `lib` and `bin` are from `Vis2`, all files are property of iseahound, and slight modifications were made just regarding Tesseract file paths. It will perform this check every 1-2 game ticks and if you have the required amount of summoning points for the special, it will execute the special attack. This means within 1-2 ticks of having enough summoning points, your familiar will spec. 
 
 To set this up, type your keybinds into the appropriate variables, and use the `Coordinates.ahk` helper application to get the region of your summoning points. It's best to be as accurate as possible. 
 
